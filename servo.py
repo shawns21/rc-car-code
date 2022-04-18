@@ -15,8 +15,8 @@ screen.keypad(True)
 servo = Servo(17, min_pulse_width = 0.5 / 1000, max_pulse_width = 2.5 / 1000, pin_factory = factory)
 
 while True:
-    char = screen.getch()
-    if char == curses.KEY_RIGHT:
+    direction = screen.getch()
+    if direction == curses.KEY_RIGHT:
         servo.value = -1
-    elif char == curses.KEY_LEFT:
+    elif direction == curses.KEY_LEFT:
         servo.value = 1
