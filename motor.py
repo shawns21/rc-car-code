@@ -50,5 +50,3 @@ with keyboard.Listener(
         on_release=on_release) as listener:
     listener.join()
 
-test = 0
-servo.value = 0
