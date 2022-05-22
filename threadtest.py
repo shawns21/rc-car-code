@@ -24,7 +24,7 @@ display = pygame.display.set_mode((100, 100))
 
 def listenServo():
     
-    glint = False
+    turnleft = False
    
     while True:
         
@@ -37,15 +37,15 @@ def listenServo():
                     sys.exit()
                 
                 if event.key == pygame.K_LEFT:
-                    glint = True 
+                    turnleft = True 
             
             if event.type == pygame.KEYUP:
 
                 if event.key == pygame.K_LEFT:
-                    glint = False
+                    turnleft = False
                     servo.value = 0.00
 
-        if glint:
+        if turnleft:
             if servo.value < 0.95:
                 servo.value = servo.value + 0.02
                 time.sleep(0.01)
@@ -54,7 +54,7 @@ def listenServo():
 
 def listenMotor():
 
-    wint = False
+    spinforward = False
    
     while True:
     
@@ -67,15 +67,15 @@ def listenMotor():
                     sys.exit()
             
                 if event.key == pygame.K_UP:
-                    wint = True
+                    spinforward = True
              
             if event.type == pygame.KEYUP:
 
                 if event.key == pygame.K_UP:
-                    wint = False
+                    spinforward = False
                     motor.value = 0.00
 
-        if wint:
+        if spinforward:
             if motor.value < 0.95:
                 motor.value = motor.value + 0.02
                 time.sleep(0.01)
